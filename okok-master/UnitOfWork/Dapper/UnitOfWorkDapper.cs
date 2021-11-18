@@ -9,9 +9,11 @@ namespace UnitOfWork.Dapper
     {
         readonly IApplicationDbContext _context;
         IDbTransaction _transaction = null;
+        IDbConnection _connection;
         public UnitOfWorkDapper(IApplicationDbContext context)
         {
             _context = context;
+            _connection = _context.Connection;
         }
 
         IDbTransaction IUnitOfWorkDapper<T>.Transaction
@@ -21,7 +23,7 @@ namespace UnitOfWork.Dapper
 
         public void Begin()
         {
-            _transaction = _context.Connection.BeginTransaction();
+            _transaction = _connection.BeginTransaction();
             Dispose();
         }
 

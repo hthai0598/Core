@@ -4,9 +4,18 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BCDT.Api" expanded="True">
+            <Node name="Bussiness" expanded="True">
+              <Node name="Service" expanded="True" />
+            </Node>
+            <Node name="DataAccess" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Interface" expanded="True" />
+            </Node>
             <Node name="UnitOfWork" expanded="True">
               <Node name="Dapper" expanded="True">
-                <Node name="Repository" expanded="True" />
+                <Node name="Repository" expanded="True">
+                  <Node name="RepositoryDapper.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -19,7 +28,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/Dapper/Repository/RepositoryDapper.cs" relfile="UnitOfWork/Dapper/Repository/RepositoryDapper.cs" line="14" column="1" />
+      <Breakpoint file="/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/Dapper/Repository/RepositoryDapper.cs" relfile="UnitOfWork/Dapper/Repository/RepositoryDapper.cs" line="19" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

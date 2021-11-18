@@ -1,5 +1,6 @@
 ﻿using BCDT.Core.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
