@@ -1,0 +1,10 @@
+{
+  "ConnectionStrings": {
+    "Common": "Server=10.0.0.43,19433;Database=BCDT_DEV;user id=sa;password=DB@dmin1112;MultipleActiveResultSets=true",
+    "Hangfire": "Server=10.0.0.43,19433;Database=vpdt-revamp-hangfire;user id=sa;password=DB@dmin1112;MultipleActiveResultSets=true"
+  },
+  "MongodbConnectionStrings": {
+    "ServerName": "mongodb://localhost:27017",
+    "DatabaseName": "BCDT_DEV"
+  }
+}
