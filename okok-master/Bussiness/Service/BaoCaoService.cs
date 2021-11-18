@@ -11,10 +11,10 @@ namespace Bussiness.Service
 {
     public class BaoCaoService : IBaoCaoService
     {
-        private readonly IUnitOfWorkEF _unitOfWorkEF;
-        private readonly IUnitOfWorkDapper _unitOfWorkDapper;
-        private readonly IUnitOfWorkMongo _unitOfWorkMongo;
-        public BaoCaoService(IUnitOfWorkEF unitOfWorkEF, IUnitOfWorkDapper unitOfWorkDapper, IUnitOfWorkMongo unitOfWorkMongo)
+        private readonly IUnitOfWorkEF<BaoCao> _unitOfWorkEF;
+        private readonly IUnitOfWorkDapper<BaoCao> _unitOfWorkDapper;
+        private readonly IUnitOfWorkMongo<BaoCao> _unitOfWorkMongo;
+        public BaoCaoService(IUnitOfWorkEF<BaoCao> unitOfWorkEF, IUnitOfWorkDapper<BaoCao> unitOfWorkDapper, IUnitOfWorkMongo<BaoCao> unitOfWorkMongo)
         {
             this._unitOfWorkEF = unitOfWorkEF;
             this._unitOfWorkDapper = unitOfWorkDapper;
@@ -24,15 +24,12 @@ namespace Bussiness.Service
         public async Task<IEnumerable<BaoCao>> GetAll()
         {
             //EF
-            //var response = await _unitOfWorkEF.baoCaoRepositoryEF.GetAll();
+            var response = await _unitOfWorkEF.baoCaoRepositoryEF.GetAll();
 
             //Mongo
             //_unitOfWorkMongo.baoCaoRepositoryMongo.Add(new BaoCao() { TrangThai = 1 });
-            //var x = await _unitOfWorkMongo.CommitAsync();
-            //var response = await _unitOfWorkMongo.baoCaoRepositoryMongo.GetAll();
-
-            var x = await _unitOfWorkMongo.CommitAsync();
-            var response = await _unitOfWorkMongo.baoCaoRepositoryMongo.GetAll();
+            //await _unitOfWorkMongo.CommitAsync();
+            //var response = await _unitOfWorkMongo.repositoryMongo.GetAll();
             return response;
 
         }

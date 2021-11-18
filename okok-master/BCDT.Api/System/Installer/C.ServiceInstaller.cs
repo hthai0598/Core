@@ -17,9 +17,9 @@ namespace BCDT.Api.System.Installer
         public void InstallerService(IServiceCollection services, IConfiguration configuration)
         {
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUnitOfWorkDapper, UnitOfWorkDapper>();
-            services.AddScoped<IUnitOfWorkEF, UnitOfWorkEF>();
-            services.AddScoped<IUnitOfWorkMongo, UnitOfWorkMongo>();
+            services.AddScoped(typeof(IUnitOfWorkDapper<>), typeof(UnitOfWorkDapper<>));
+            services.AddScoped(typeof(IUnitOfWorkEF<>), typeof(UnitOfWorkEF<>));
+            services.AddScoped(typeof(IUnitOfWorkMongo<>), typeof(UnitOfWorkMongo<>));
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IBaoCaoService, BaoCaoService>();
         }

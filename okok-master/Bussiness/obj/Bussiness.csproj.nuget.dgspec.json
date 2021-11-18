@@ -1,39 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\okok-master\\Bussiness\\Bussiness.csproj": {}
+    "/Users/mac_nhthai/Desktop/Core/okok-master/Bussiness/Bussiness.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\okok-master\\Bussiness\\Bussiness.csproj": {
+    "/Users/mac_nhthai/Desktop/Core/okok-master/Bussiness/Bussiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\okok-master\\Bussiness\\Bussiness.csproj",
+        "projectUniqueName": "/Users/mac_nhthai/Desktop/Core/okok-master/Bussiness/Bussiness.csproj",
         "projectName": "Bussiness",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Bussiness\\Bussiness.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Bussiness\\obj\\",
+        "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Bussiness/Bussiness.csproj",
+        "packagesPath": "/Users/mac_nhthai/.nuget/packages/",
+        "outputPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Bussiness/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mac_nhthai/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\GemPackge": {},
+          "/Users/mac_nhthai/Desktop/Nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj"
+              "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj": {
+                "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\UnitOfWork.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\UnitOfWork.csproj"
+              "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/UnitOfWork.csproj": {
+                "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/UnitOfWork.csproj"
               }
             }
           }
@@ -114,29 +115,30 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj": {
+    "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj",
+        "projectUniqueName": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\obj\\",
+        "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj",
+        "packagesPath": "/Users/mac_nhthai/.nuget/packages/",
+        "outputPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mac_nhthai/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\GemPackge": {},
+          "/Users/mac_nhthai/Desktop/Nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -195,37 +197,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\DataAccess.csproj": {
+    "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\obj\\",
+        "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/DataAccess.csproj",
+        "packagesPath": "/Users/mac_nhthai/.nuget/packages/",
+        "outputPath": "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mac_nhthai/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\GemPackge": {},
+          "/Users/mac_nhthai/Desktop/Nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\Common\\Common.csproj"
+              "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj": {
+                "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj"
               }
             }
           }
@@ -306,37 +309,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\UnitOfWork.csproj": {
+    "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/UnitOfWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\UnitOfWork.csproj",
+        "projectUniqueName": "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/UnitOfWork.csproj",
         "projectName": "UnitOfWork",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\UnitOfWork.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\okok-master\\UnitOfWork\\obj\\",
+        "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/UnitOfWork.csproj",
+        "packagesPath": "/Users/mac_nhthai/.nuget/packages/",
+        "outputPath": "/Users/mac_nhthai/Desktop/Core/okok-master/UnitOfWork/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/mac_nhthai/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\GemPackge": {},
+          "/Users/mac_nhthai/Desktop/Nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\okok-master\\DataAccess\\DataAccess.csproj"
+              "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/DataAccess.csproj": {
+                "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/DataAccess/DataAccess.csproj"
               }
             }
           }
@@ -399,7 +403,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

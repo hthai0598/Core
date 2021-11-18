@@ -15,13 +15,9 @@ namespace Bussiness.Service
 {
     public class AuthService : IAuthService
     {
-        private readonly IUnitOfWorkEF _unitOfWorkEF;
-        private readonly IUnitOfWorkDapper _unitOfWorkDapper;
         private readonly IConfiguration _configuration;
-        public AuthService(IUnitOfWorkEF unitOfWorkEF, IUnitOfWorkDapper unitOfWorkDapper, IConfiguration configuration)
+        public AuthService(IConfiguration configuration)
         {
-            this._unitOfWorkEF = unitOfWorkEF;
-            this._unitOfWorkDapper = unitOfWorkDapper;
             this._configuration = configuration;
         }
         public TokenResponseModel GeneralJWTToken(VerifyTokenModel model)

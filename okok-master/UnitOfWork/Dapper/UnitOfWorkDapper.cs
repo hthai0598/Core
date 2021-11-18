@@ -5,7 +5,7 @@ using UnitOfWork.Dapper.Repository;
 
 namespace UnitOfWork.Dapper
 {
-    public class UnitOfWorkDapper : IUnitOfWorkDapper
+    public class UnitOfWorkDapper<T> : IUnitOfWorkDapper<T> where T : class
     {
         readonly IApplicationDbContext _context;
         IDbTransaction _transaction = null;
@@ -14,7 +14,7 @@ namespace UnitOfWork.Dapper
             _context = context;
         }
 
-        IDbTransaction IUnitOfWorkDapper.Transaction
+        IDbTransaction IUnitOfWorkDapper<T>.Transaction
         {
             get { return _transaction; }
         }
@@ -44,6 +44,20 @@ namespace UnitOfWork.Dapper
             _transaction = null;
         }
         #region register
+        private IRepositoryDapper<T> _repositoryDapper;
+        public IRepositoryDapper<T> repositoryDapper
+        {
+            get
+            {
+                if (_repositoryDapper == null)
+                {
+                    _repositoryDapper = new RepositoryDapper<T>(_context);
+                }
+                return _repositoryDapper;
+            }
+        }
+
+
         private IBaoCaoRepositoryDapper _baoCaoRepositoryDapper;
         public IBaoCaoRepositoryDapper baoCaoRepositoryDapper
         {

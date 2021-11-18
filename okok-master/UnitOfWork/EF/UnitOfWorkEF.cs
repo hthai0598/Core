@@ -6,7 +6,7 @@ using UnitOfWork.UnitOfWork.Interface;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public class UnitOfWorkEF : IUnitOfWorkEF
+    public class UnitOfWorkEF<T> : IUnitOfWorkEF<T> where T : class
     {
         readonly IApplicationDbContext context;
 
@@ -27,6 +27,20 @@ namespace UnitOfWork.UnitOfWork
         }
 
         #region Register
+        private IRepositoryEF<T> _repositoryEF { get; set; }
+        public IRepositoryEF<T> repositoryEF
+        {
+            get
+            {
+                if (_repositoryEF == null)
+                {
+                    _repositoryEF = new RepositoryEF<T>(context);
+                }
+                return _repositoryEF;
+            }
+        }
+
+
         private IBaoCaoRepositoryEF _baoCaoRepositoryEF { get; set; }
         public IBaoCaoRepositoryEF baoCaoRepositoryEF
         {

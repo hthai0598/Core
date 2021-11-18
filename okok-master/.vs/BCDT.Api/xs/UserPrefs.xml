@@ -1,21 +1,13 @@
 ﻿<Properties StartupConfiguration="{4F6DE0C6-77DE-4768-B123-D5FA4297834F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BCDT.Api/System/Installer/InstallerSystem.cs">
-    <Files>
-      <File FileName="BCDT.Api/System/Installer/InstallerSystem.cs" Line="23" Column="23" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BCDT.Api" expanded="True">
-            <Node name="BCDT.Api" expanded="True">
-              <Node name="System" expanded="True">
-                <Node name="Installer" expanded="True">
-                  <Node name="InstallerSystem.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
             <Node name="UnitOfWork" expanded="True">
-              <Node name="EF" expanded="True" />
+              <Node name="Dapper" expanded="True">
+                <Node name="Repository" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

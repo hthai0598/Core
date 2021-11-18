@@ -1,4 +1,5 @@
 ﻿
+using BCDT.Core.Entities;
 using DataAccess.Interface;
 using System;
 using System.Threading.Tasks;
@@ -7,9 +8,9 @@ using UnitOfWork.Mongo.Repository;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public class UnitOfWorkMongo : IUnitOfWorkMongo
+    public class UnitOfWorkMongo<T> : IUnitOfWorkMongo<T> where T : class
     {
-        private readonly IMongoContext _context;
+        public IMongoContext _context;
         public UnitOfWorkMongo(IMongoContext context)
         {
             _context = context;
@@ -30,6 +31,18 @@ namespace UnitOfWork.UnitOfWork
             _context.Dispose();
         }
 
+
+        IRepositoryMongo<T> _repositoryMongo;
+        public IRepositoryMongo<T> repositoryMongo
+        {
+            get
+            {
+                if (_repositoryMongo == null)
+                    _repositoryMongo = new RepositoryMongo<T>(_context);
+
+                return _repositoryMongo;
+            }
+        }
 
         IRepositoryBaoCaoMongo _baoCaoRepositoryMongo;
         public IRepositoryBaoCaoMongo baoCaoRepositoryMongo

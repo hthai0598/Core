@@ -13,10 +13,10 @@ namespace UnitOfWork.Mongo.Repository
 {
     public class RepositoryMongo<TEntity> : IRepositoryMongo<TEntity> where TEntity : class
     {
-        protected readonly IMongoContext _context;
+        protected IMongoContext _context;
         protected IMongoCollection<TEntity> DbSet;
 
-        protected RepositoryMongo(IMongoContext context)
+        public RepositoryMongo(IMongoContext context)
         {
             _context = context;
         }

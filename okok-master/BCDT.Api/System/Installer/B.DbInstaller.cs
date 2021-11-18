@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BCDT.Api.System.Installer
 {
-    public class BEFInstaller : IInstaller
+    public class DbInstaller : IInstaller
     {
         public void InstallerService(IServiceCollection services, IConfiguration configuration)
         {
