@@ -1,27 +1,28 @@
 ﻿
-using BCDT.Core.Entities;
 using DataAccess.Interface;
-using System;
+using DataAccess.Config;
 using System.Threading.Tasks;
 using UnitOfWork.Mongo.IRepository;
 using UnitOfWork.Mongo.Repository;
+using System.Collections.Generic;
+using BCDT.Core.Entities;
+using System.Linq;
+using System.Collections;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public class UnitOfWorkMongo<T> : IUnitOfWorkMongo<T> where T : class
+    public class UnitOfWorkMongo : IUnitOfWorkMongo
     {
         public IMongoContext _context;
         public UnitOfWorkMongo(IMongoContext context)
         {
             _context = context;
         }
-
         public async Task<bool> CommitAsync()
         {
             var changeAmount = await _context.SaveChangesAsync();
             return changeAmount > 0;
         }
-
         public bool Commit()
         {
             return _context.SaveChanges() > 0;
@@ -31,17 +32,18 @@ namespace UnitOfWork.UnitOfWork
             _context.Dispose();
         }
 
-
-        IRepositoryMongo<T> _repositoryMongo;
-        public IRepositoryMongo<T> repositoryMongo
+        #region Register
+        private Hashtable repositoryMongo = new Hashtable();
+        public IRepositoryMongo<T> GetRepository<T>() where T : class
         {
-            get
+            var type = typeof(T).Name;
+            if (repositoryMongo.ContainsKey(type))
             {
-                if (_repositoryMongo == null)
-                    _repositoryMongo = new RepositoryMongo<T>(_context);
-
-                return _repositoryMongo;
+                return (IRepositoryMongo<T>)repositoryMongo[type];
             }
+            var instance = new RepositoryMongo<T>(_context);
+            repositoryMongo.Add(type, instance);
+            return instance;
         }
 
         IRepositoryBaoCaoMongo _baoCaoRepositoryMongo;
@@ -55,5 +57,7 @@ namespace UnitOfWork.UnitOfWork
                 return _baoCaoRepositoryMongo;
             }
         }
+        #endregion
+
     }
 }

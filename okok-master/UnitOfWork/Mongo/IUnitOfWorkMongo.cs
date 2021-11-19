@@ -4,10 +4,10 @@ using UnitOfWork.Mongo.IRepository;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public interface IUnitOfWorkMongo<T> : IDisposable where T : class
+    public interface IUnitOfWorkMongo : IDisposable
     {
         IRepositoryBaoCaoMongo baoCaoRepositoryMongo { get; }
-        IRepositoryMongo<T> repositoryMongo { get; }
+        IRepositoryMongo<T> GetRepository<T>() where T : class;
         Task<bool> CommitAsync();
         bool Commit();
     }

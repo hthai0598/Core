@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitOfWork.EF.IRepository
 {
-    public interface IRepositoryEF<T>
+    public interface IRepositoryEF<T> : IDisposable
     {
         Task<IEnumerable<T>> GetAll();
     }

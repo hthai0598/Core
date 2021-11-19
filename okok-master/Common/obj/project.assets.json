@@ -8129,29 +8129,27 @@
     ]
   },
   "packageFolders": {
-    "/Users/mac_nhthai/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Core\\okok-master\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/Common.csproj",
-      "packagesPath": "/Users/mac_nhthai/.nuget/packages/",
-      "outputPath": "/Users/mac_nhthai/Desktop/Core/okok-master/Common/obj/",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Core\\okok-master\\Common\\Common.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Core\\okok-master\\Common\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/mac_nhthai/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "/Users/mac_nhthai/Desktop/Nuget": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "F:\\GemPackge": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8210,7 +8208,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }

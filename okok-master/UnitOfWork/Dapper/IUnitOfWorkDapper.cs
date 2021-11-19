@@ -1,14 +1,15 @@
 ﻿using System.Data;
 using DataAccess.Interface;
+using Microsoft.EntityFrameworkCore.Storage;
 using UnitOfWork.Dapper.IRepository;
 
 namespace UnitOfWork.Dapper
 {
-    public interface IUnitOfWorkDapper<T> where T : class
+    public interface IUnitOfWorkDapper
     {
+        IRepositoryDapper<T> GetRepository<T>() where T : class;
         IBaoCaoRepositoryDapper baoCaoRepositoryDapper { get; }
-        IDbTransaction Transaction { get; }
-        IRepositoryDapper<T> repositoryDapper { get; }
+        IDbContextTransaction Transaction { get; }
         void Begin();
         void Commit();
         void Rollback();

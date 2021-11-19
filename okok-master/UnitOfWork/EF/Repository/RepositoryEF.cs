@@ -11,17 +11,21 @@ namespace UnitOfWork.EF.Repository
 {
     public class RepositoryEF<T> : IRepositoryEF<T> where T : class
     {
-        readonly IApplicationDbContext context;
+        readonly IApplicationDbContext _context;
         protected DbSet<T> DbSet;
-        public RepositoryEF(IApplicationDbContext _context)
+        public RepositoryEF(IApplicationDbContext context)
         {
-            this.context = _context;
-            this.DbSet = context.Set<T>();
+            this._context = context;
+            this.DbSet = _context.Set<T>();
         }
         public async Task<IEnumerable<T>> GetAll()
         {
             var all = await DbSet.ToListAsync();
             return all.ToList();
+        }
+        public void Dispose()
+        {
+            _context.Dispose();
         }
 
     }

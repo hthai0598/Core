@@ -29,6 +29,7 @@ namespace BCDT.Core.Data
         public DbSet<KyBaoCao> KyBaoCao { get; set; }
         public DbSet<KyDuLieu> KyDuLieu { get; set; }
         public DbSet<CongThuc> CongThuc { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

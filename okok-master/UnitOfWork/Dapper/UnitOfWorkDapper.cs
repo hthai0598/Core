@@ -1,44 +1,39 @@
 ﻿using DataAccess.Interface;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using UnitOfWork.Dapper.IRepository;
 using UnitOfWork.Dapper.Repository;
 
 namespace UnitOfWork.Dapper
 {
-    public class UnitOfWorkDapper<T> : IUnitOfWorkDapper<T> where T : class
+    public class UnitOfWorkDapper : IUnitOfWorkDapper
     {
         readonly IApplicationDbContext _context;
-        IDbTransaction _transaction = null;
-        IDbConnection _connection;
+        IDbContextTransaction _transaction = null;
         public UnitOfWorkDapper(IApplicationDbContext context)
         {
             _context = context;
-            _connection = _context.Connection;
         }
-
-        IDbTransaction IUnitOfWorkDapper<T>.Transaction
+        IDbContextTransaction IUnitOfWorkDapper.Transaction
         {
             get { return _transaction; }
         }
-
         public void Begin()
         {
-            _transaction = _connection.BeginTransaction();
-            Dispose();
+            _transaction = _context.Database.BeginTransaction();
         }
-
         public void Commit()
         {
             _transaction.Commit();
             Dispose();
         }
-
         public void Rollback()
         {
             _transaction.Rollback();
             Dispose();
         }
-
         public void Dispose()
         {
             if (_transaction != null)
@@ -46,19 +41,18 @@ namespace UnitOfWork.Dapper
             _transaction = null;
         }
         #region register
-        private IRepositoryDapper<T> _repositoryDapper;
-        public IRepositoryDapper<T> repositoryDapper
+        private Hashtable repositoryDapper = new Hashtable();
+        public IRepositoryDapper<T> GetRepository<T>() where T : class
         {
-            get
+            var type = typeof(T).Name;
+            if (repositoryDapper.ContainsKey(type))
             {
-                if (_repositoryDapper == null)
-                {
-                    _repositoryDapper = new RepositoryDapper<T>(_context);
-                }
-                return _repositoryDapper;
+                return (IRepositoryDapper<T>)repositoryDapper[type];
             }
+            var instance = new RepositoryDapper<T>(_context);
+            repositoryDapper.Add(type, instance);
+            return instance;
         }
-
 
         private IBaoCaoRepositoryDapper _baoCaoRepositoryDapper;
         public IBaoCaoRepositoryDapper baoCaoRepositoryDapper

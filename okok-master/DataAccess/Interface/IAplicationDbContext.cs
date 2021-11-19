@@ -1,15 +1,17 @@
 ﻿using BCDT.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
 using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace DataAccess.Interface
 {
-    public interface IApplicationDbContext
+    public interface IApplicationDbContext : IDisposable
     {
         public IDbConnection Connection { get; }
+        public DatabaseFacade Database { get; }
         public DbSet<DanhMuc> DanhMuc { get; set; }
         public DbSet<CT_BanGhi> CT_BanGhi { get; set; }
         public DbSet<DM_BanGhi> DM_BanGhi { get; set; }

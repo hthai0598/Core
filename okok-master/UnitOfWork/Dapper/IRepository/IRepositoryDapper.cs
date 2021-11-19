@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading;
@@ -8,10 +9,10 @@ namespace DataAccess.Interface
 {
     public interface IRepositoryDapper<T> where T : class
     {
-        Task<IReadOnlyList<T>> QueryAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default);
-        Task<T> QueryFirstOrDefaultAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default);
-        Task<T> QuerySingleAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default);
-        Task<int> ExecuteAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<T>> QueryAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default);
+        Task<T> QueryFirstOrDefaultAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default);
+        Task<T> QuerySingleAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default);
+        Task<int> ExecuteAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default);
 
         T Get(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
         Task<T> GetAsync(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);

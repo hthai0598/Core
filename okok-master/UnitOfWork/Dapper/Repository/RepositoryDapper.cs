@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DataAccess.Interface;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,21 +16,21 @@ namespace UnitOfWork.Dapper
         {
             this.context = context;
         }
-        public async Task<int> ExecuteAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default)
+        public async Task<int> ExecuteAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default)
         {
-            return await context.Connection.ExecuteAsync(sql, param, transaction);
+            return await context.Connection.ExecuteAsync(sql, param, transaction.GetDbTransaction());
         }
-        public async Task<IReadOnlyList<T>> QueryAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default)
+        public async Task<IReadOnlyList<T>> QueryAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default)
         {
-            return (await context.Connection.QueryAsync<T>(sql, param, transaction)).AsList();
+            return (await context.Connection.QueryAsync<T>(sql, param, transaction.GetDbTransaction())).AsList();
         }
-        public async Task<T> QueryFirstOrDefaultAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default)
+        public async Task<T> QueryFirstOrDefaultAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default)
         {
-            return await context.Connection.QueryFirstOrDefaultAsync<T>(sql, param, transaction);
+            return await context.Connection.QueryFirstOrDefaultAsync<T>(sql, param, transaction.GetDbTransaction());
         }
-        public async Task<T> QuerySingleAsync(string sql, object param = null, IDbTransaction transaction = null, CancellationToken cancellationToken = default)
+        public async Task<T> QuerySingleAsync(string sql, object param = null, IDbContextTransaction transaction = null, CancellationToken cancellationToken = default)
         {
-            return await context.Connection.QuerySingleAsync<T>(sql, param, transaction);
+            return await context.Connection.QuerySingleAsync<T>(sql, param, transaction.GetDbTransaction());
         }
 
         public async Task Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)

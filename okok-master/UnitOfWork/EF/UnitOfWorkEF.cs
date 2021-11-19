@@ -1,46 +1,46 @@
-﻿using DataAccess.Interface;
+﻿using BCDT.Core.Data;
+using DataAccess.Interface;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnitOfWork.EF.IRepository;
 using UnitOfWork.EF.Repository;
+using System.Collections;
 using UnitOfWork.UnitOfWork.Interface;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public class UnitOfWorkEF<T> : IUnitOfWorkEF<T> where T : class
+    public class UnitOfWorkEF : IUnitOfWorkEF
     {
-        readonly IApplicationDbContext context;
+        readonly IApplicationDbContext _context;
 
-        public static object singleton { get; set; }
-        public UnitOfWorkEF(IApplicationDbContext _context)
+        public UnitOfWorkEF(IApplicationDbContext context)
         {
-            context = _context;
+            _context = context;
         }
 
         public int Commit()
         {
-            return context.SaveChanges();
+            return _context.SaveChanges();
         }
 
         public async Task<int> CommitAsync()
         {
-            return await context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
 
         #region Register
-        private IRepositoryEF<T> _repositoryEF { get; set; }
-        public IRepositoryEF<T> repositoryEF
+        private Hashtable repositoryEF = new Hashtable();
+        public IRepositoryEF<T> GetRepository<T>() where T : class
         {
-            get
+            var type = typeof(T).Name;
+            if (repositoryEF.ContainsKey(type))
             {
-                if (_repositoryEF == null)
-                {
-                    _repositoryEF = new RepositoryEF<T>(context);
-                }
-                return _repositoryEF;
+                return (IRepositoryEF<T>)repositoryEF[type];
             }
+            var instance = new RepositoryEF<T>(_context);
+            repositoryEF.Add(type, instance);
+            return instance;
         }
-
-
         private IBaoCaoRepositoryEF _baoCaoRepositoryEF { get; set; }
         public IBaoCaoRepositoryEF baoCaoRepositoryEF
         {
@@ -48,7 +48,7 @@ namespace UnitOfWork.UnitOfWork
             {
                 if (_baoCaoRepositoryEF == null)
                 {
-                    _baoCaoRepositoryEF = new BaoCaoRepositoryEF(context);
+                    _baoCaoRepositoryEF = new BaoCaoRepositoryEF(_context);
                 }
                 return _baoCaoRepositoryEF;
             }
